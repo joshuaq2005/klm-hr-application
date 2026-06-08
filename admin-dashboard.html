@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLM HR Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="app-styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <!-- Admin Navigation -->
+    <nav class="admin-navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>KLM HR Admin</span>
+            </div>
+            <div class="admin-nav-controls">
+                <button class="btn-logout" onclick="adminLogout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <nav class="admin-menu">
+                <a href="#dashboard" class="menu-item active" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#applications" class="menu-item" data-section="applications">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Applications</span>
+                </a>
+                <a href="#users" class="menu-item" data-section="users">
+                    <i class="fas fa-users"></i>
+                    <span>Users</span>
+                </a>
+                <a href="#analytics" class="menu-item" data-section="analytics">
+                    <i class="fas fa-analytics"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#settings" class="menu-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="admin-section active">
+                <div class="section-header">
+                    <h1>Dashboard</h1>
+                    <p>Welcome to KLM HR Admin Panel</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- KPI Cards -->
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-file-alt"></i></div>
+                        <div class="kpi-content">
+                            <h4>Total Applications</h4>
+                            <p class="kpi-number" id="totalApps">0</p>
+                            <span class="kpi-change positive">+12% this month</span>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="kpi-content">
+                            <h4>Approved</h4>
+                            <p class="kpi-number" id="approvedApps">0</p>
+                            <span class="kpi-change neutral">32% approval rate</span>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-hourglass-half"></i></div>
+                        <div class="kpi-content">
+                            <h4>Pending Review</h4>
+                            <p class="kpi-number" id="pendingApps">0</p>
+                            <span class="kpi-change neutral">Awaiting decision</span>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-times-circle"></i></div>
+                        <div class="kpi-content">
+                            <h4>Rejected</h4>
+                            <p class="kpi-number" id="rejectedApps">0</p>
+                            <span class="kpi-change negative">68% rejection rate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Applications -->
+                <div class="content-card">
+                    <h3>Recent Applications</h3>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Discord ID</th>
+                                    <th>Username</th>
+                                    <th>Status</th>
+                                    <th>Submitted</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentAppsTable">
+                                <tr>
+                                    <td colspan="5" class="empty-state">No applications yet</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Applications Section -->
+            <section id="applications" class="admin-section">
+                <div class="section-header">
+                    <h1>Applications</h1>
+                    <div class="filter-controls">
+                        <select id="statusFilter" onchange="filterApplications()">
+                            <option value="">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Discord ID</th>
+                                    <th>Username</th>
+                                    <th>Hours/Week</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="applicationsTable">
+                                <tr>
+                                    <td colspan="6" class="empty-state">No applications found</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Users Section -->
+            <section id="users" class="admin-section">
+                <div class="section-header">
+                    <h1>Users</h1>
+                    <button class="btn btn-primary" onclick="openAddUserModal()">
+                        <i class="fas fa-plus"></i> Add User
+                    </button>
+                </div>
+
+                <div class="content-card">
+                    <div class="users-grid" id="usersGrid">
+                        <div class="empty-state">No users found</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics" class="admin-section">
+                <div class="section-header">
+                    <h1>Analytics</h1>
+                </div>
+
+                <div class="analytics-grid">
+                    <div class="content-card">
+                        <h3>Application Status Distribution</h3>
+                        <canvas id="statusChart"></canvas>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>Applications Over Time</h3>
+                        <canvas id="timeChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="admin-section">
+                <div class="section-header">
+                    <h1>Settings</h1>
+                </div>
+
+                <div class="content-card">
+                    <h3>Admin Settings</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label>Application Approval Threshold (words)</label>
+                            <input type="number" id="approvalThreshold" value="50" min="1" max="500">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Rejection Message</label>
+                            <textarea id="rejectionMessage" rows="4" placeholder="Default rejection message..."></textarea>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" onclick="saveSettings()">
+                            <i class="fas fa-save"></i> Save Settings
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Passcode Modal -->
+    <div id="passcodeModal" class="modal">
+        <div class="modal-content passcode-modal">
+            <div class="modal-header">
+                <h2>Admin Access Required</h2>
+                <p>Enter the admin passcode to continue</p>
+            </div>
+            <div class="form-group">
+                <input type="password" id="passcodeInput" placeholder="Enter passcode" class="passcode-input">
+                <span class="requirement" id="passcodeError" style="display:none; color: var(--danger);">Invalid passcode</span>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-primary" onclick="verifyPasscode()">
+                    <i class="fas fa-lock-open"></i> Unlock
+                </button>
+                <button class="btn btn-secondary" onclick="goBackHome()">
+                    <i class="fas fa-arrow-left"></i> Back Home
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>
