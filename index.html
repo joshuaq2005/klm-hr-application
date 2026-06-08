@@ -3,161 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KLM HR Application - Human Resources Management</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>KLM HR Application - Premium Human Resources Management</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-users-cog"></i>
-                <span>KLM HR</span>
+        <div class="nav-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-crown"></i>
+                    <span>KLM HR</span>
+                </div>
+                <p class="logo-tagline">Premium Solutions</p>
             </div>
             <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home" data-section="home">Home</a></li>
-                <li><a href="#features" data-section="features">Features</a></li>
-                <li><a href="#employees" data-section="employees">Employees</a></li>
-                <li><a href="#leave" data-section="leave">Leave</a></li>
-                <li><a href="#dashboard" data-section="dashboard">Dashboard</a></li>
-                <li><a href="#contact" data-section="contact">Contact</a></li>
-                <li><a href="#login" class="btn-login">Login</a></li>
+                <li><a href="#home" data-section="home" class="nav-link">Home</a></li>
+                <li><a href="#features" data-section="features" class="nav-link">Features</a></li>
+                <li><a href="#employees" data-section="employees" class="nav-link">Employees</a></li>
+                <li><a href="#leave" data-section="leave" class="nav-link">Leave</a></li>
+                <li><a href="#analytics" data-section="analytics" class="nav-link">Analytics</a></li>
+                <li><a href="#contact" data-section="contact" class="nav-link">Contact</a></li>
+                <li><a href="#login" class="nav-link btn-login" id="loginTrigger">Login</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="hero-background"></div>
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Welcome to KLM HR Management</h1>
-                <p class="hero-subtitle">Empower your workforce with intelligent human resource management</p>
-                <div class="hero-buttons">
-                    <button class="cta-button cta-primary" id="getStartedBtn">
-                        <i class="fas fa-rocket"></i> Get Started
-                    </button>
-                    <button class="cta-button cta-secondary" id="learnMoreBtn">
-                        <i class="fas fa-play-circle"></i> Learn More
-                    </button>
+    <header id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="word">Enterprise</span>
+                        <span class="word">HR</span>
+                        <span class="word">Management</span>
+                    </h1>
+                    <p class="hero-subtitle">Transform your workforce management with KLM's premium HR solution</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">245+</span>
+                            <span class="stat-label">Employees</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Satisfaction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" id="getStartedBtn">
+                            <i class="fas fa-rocket"></i> Get Started
+                        </button>
+                        <button class="btn btn-secondary" id="learnMoreBtn">
+                            <i class="fas fa-play-circle"></i> View Demo
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image">
-                <div class="floating-card">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Real-time Analytics</span>
-                </div>
-                <div class="floating-card" style="animation-delay: 0.5s;">
-                    <i class="fas fa-users"></i>
-                    <span>Employee Portal</span>
-                </div>
-                <div class="floating-card" style="animation-delay: 1s;">
-                    <i class="fas fa-tasks"></i>
-                    <span>Task Management</span>
+                <div class="hero-visual">
+                    <div class="floating-element element-1">
+                        <div class="element-content">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Analytics</p>
+                        </div>
+                    </div>
+                    <div class="floating-element element-2">
+                        <div class="element-content">
+                            <i class="fas fa-users"></i>
+                            <p>Team</p>
+                        </div>
+                    </div>
+                    <div class="floating-element element-3">
+                        <div class="element-content">
+                            <i class="fas fa-calendar"></i>
+                            <p>Schedule</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Features Overview Section -->
-    <section id="features" class="section features-overview">
-        <div class="container">
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="section-container">
             <div class="section-header">
                 <h2>Powerful Features</h2>
-                <p>Everything you need to manage your human resources efficiently</p>
+                <p>Everything you need for modern HR management</p>
+                <div class="header-underline"></div>
             </div>
             <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
+                <div class="feature-card">
+                    <div class="feature-icon icon-1">
                         <i class="fas fa-id-badge"></i>
                     </div>
-                    <h3>Employee Management</h3>
-                    <p>Centralize employee data and streamline HR operations</p>
+                    <h3>Employee Portal</h3>
+                    <p>Complete employee profiles with real-time data synchronization</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Directory Management</li>
+                        <li><i class="fas fa-check"></i> Profile Updates</li>
+                        <li><i class="fas fa-check"></i> Team Collaboration</li>
+                    </ul>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-calendar-alt"></i>
+                <div class="feature-card">
+                    <div class="feature-icon icon-2">
+                        <i class="fas fa-calendar-check"></i>
                     </div>
                     <h3>Leave Management</h3>
-                    <p>Manage time-off requests and track employee attendance</p>
+                    <p>Streamlined leave requests with intelligent approval workflow</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Auto Approval Rules</li>
+                        <li><i class="fas fa-check"></i> Balance Tracking</li>
+                        <li><i class="fas fa-check"></i> Compliance Reporting</li>
+                    </ul>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
+                <div class="feature-card">
+                    <div class="feature-icon icon-3">
                         <i class="fas fa-chart-bar"></i>
                     </div>
-                    <h3>Analytics & Reports</h3>
-                    <p>Get insights with comprehensive HR analytics</p>
+                    <h3>Advanced Analytics</h3>
+                    <p>Real-time insights with comprehensive HR metrics and KPIs</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Real-time Dashboards</li>
+                        <li><i class="fas fa-check"></i> Custom Reports</li>
+                        <li><i class="fas fa-check"></i> Predictive Analytics</li>
+                    </ul>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-lock"></i>
+                <div class="feature-card">
+                    <div class="feature-icon icon-4">
+                        <i class="fas fa-lock-alt"></i>
                     </div>
-                    <h3>Security</h3>
-                    <p>Enterprise-grade security for sensitive data</p>
+                    <h3>Enterprise Security</h3>
+                    <p>Military-grade encryption with role-based access control</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Data Encryption</li>
+                        <li><i class="fas fa-check"></i> Compliance Ready</li>
+                        <li><i class="fas fa-check"></i> Audit Logs</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Employee Management Section -->
-    <section id="employees" class="section employees-section">
-        <div class="container">
+    <!-- Employee Directory Section -->
+    <section id="employees" class="employees-section">
+        <div class="section-container">
             <div class="section-header">
-                <h2>Employee Management</h2>
-                <p>Comprehensive tools to manage your workforce</p>
+                <h2>Employee Directory</h2>
+                <p>Manage your workforce with precision</p>
+                <div class="header-underline"></div>
             </div>
-            <div class="employees-content">
-                <div class="employees-list">
-                    <div class="employee-card">
-                        <div class="employee-avatar">JD</div>
-                        <h3>John Doe</h3>
-                        <p class="role">Senior Developer</p>
-                        <p class="department">Engineering</p>
+            <div class="employees-wrapper">
+                <div class="employees-grid">
+                    <div class="employee-card premium">
+                        <div class="employee-header">
+                            <div class="employee-avatar av-1">
+                                <span>JD</span>
+                            </div>
+                            <div class="employee-status active"></div>
+                        </div>
+                        <h3>John Davidson</h3>
+                        <p class="employee-role">Senior Developer</p>
+                        <p class="employee-dept">Engineering</p>
+                        <div class="employee-meta">
+                            <span class="meta-badge">Full-time</span>
+                            <span class="meta-badge">5 yrs</span>
+                        </div>
                         <div class="employee-actions">
-                            <button class="btn-small"><i class="fas fa-eye"></i> View</button>
-                            <button class="btn-small"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn"><i class="fas fa-envelope"></i></button>
+                            <button class="action-btn"><i class="fas fa-edit"></i></button>
                         </div>
                     </div>
-                    <div class="employee-card">
-                        <div class="employee-avatar">SM">SM</div>
-                        <h3>Sarah Miller</h3>
-                        <p class="role">HR Manager</p>
-                        <p class="department">Human Resources</p>
+
+                    <div class="employee-card premium">
+                        <div class="employee-header">
+                            <div class="employee-avatar av-2">
+                                <span>SM</span>
+                            </div>
+                            <div class="employee-status active"></div>
+                        </div>
+                        <h3>Sarah Mitchell</h3>
+                        <p class="employee-role">HR Manager</p>
+                        <p class="employee-dept">Human Resources</p>
+                        <div class="employee-meta">
+                            <span class="meta-badge">Full-time</span>
+                            <span class="meta-badge">3 yrs</span>
+                        </div>
                         <div class="employee-actions">
-                            <button class="btn-small"><i class="fas fa-eye"></i> View</button>
-                            <button class="btn-small"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn"><i class="fas fa-envelope"></i></button>
+                            <button class="action-btn"><i class="fas fa-edit"></i></button>
                         </div>
                     </div>
-                    <div class="employee-card">
-                        <div class="employee-avatar">MC">MC</div>
-                        <h3>Mike Chen</h3>
-                        <p class="role">Product Manager</p>
-                        <p class="department">Product</p>
+
+                    <div class="employee-card premium">
+                        <div class="employee-header">
+                            <div class="employee-avatar av-3">
+                                <span>MC</span>
+                            </div>
+                            <div class="employee-status away"></div>
+                        </div>
+                        <h3>Michael Chen</h3>
+                        <p class="employee-role">Product Manager</p>
+                        <p class="employee-dept">Product</p>
+                        <div class="employee-meta">
+                            <span class="meta-badge">Full-time</span>
+                            <span class="meta-badge">4 yrs</span>
+                        </div>
                         <div class="employee-actions">
-                            <button class="btn-small"><i class="fas fa-eye"></i> View</button>
-                            <button class="btn-small"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn"><i class="fas fa-envelope"></i></button>
+                            <button class="action-btn"><i class="fas fa-edit"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="employee-card premium">
+                        <div class="employee-header">
+                            <div class="employee-avatar av-4">
+                                <span>EP</span>
+                            </div>
+                            <div class="employee-status active"></div>
+                        </div>
+                        <h3>Emma Peterson</h3>
+                        <p class="employee-role">UX Designer</p>
+                        <p class="employee-dept">Design</p>
+                        <div class="employee-meta">
+                            <span class="meta-badge">Full-time</span>
+                            <span class="meta-badge">2 yrs</span>
+                        </div>
+                        <div class="employee-actions">
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn"><i class="fas fa-envelope"></i></button>
+                            <button class="action-btn"><i class="fas fa-edit"></i></button>
                         </div>
                     </div>
                 </div>
-                <div class="employees-features">
-                    <div class="feature-box">
-                        <i class="fas fa-address-book"></i>
-                        <h4>Employee Directory</h4>
-                        <p>Complete employee profiles with contact information</p>
-                    </div>
-                    <div class="feature-box">
-                        <i class="fas fa-sitemap"></i>
-                        <h4>Department Management</h4>
-                        <p>Organize and manage departments efficiently</p>
-                    </div>
-                    <div class="feature-box">
-                        <i class="fas fa-user-check"></i>
-                        <h4>Role Assignment</h4>
-                        <p>Manage roles and responsibilities</p>
+                <div class="employees-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Department Stats</h4>
+                        <div class="stat-item">
+                            <span>Engineering</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill fill-1"></div>
+                            </div>
+                            <span class="stat-count">45</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Sales</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill fill-2"></div>
+                            </div>
+                            <span class="stat-count">35</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>HR</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill fill-3"></div>
+                            </div>
+                            <span class="stat-count">20</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -165,24 +286,26 @@
     </section>
 
     <!-- Leave Management Section -->
-    <section id="leave" class="section leave-section">
-        <div class="container">
+    <section id="leave" class="leave-section">
+        <div class="section-container">
             <div class="section-header">
                 <h2>Leave Management System</h2>
-                <p>Simplified leave request and approval process</p>
+                <p>Intelligent leave request and approval workflow</p>
+                <div class="header-underline"></div>
             </div>
-            <div class="leave-content">
-                <div class="leave-form">
+            <div class="leave-wrapper">
+                <div class="leave-form-card">
                     <h3>Submit Leave Request</h3>
-                    <form id="leaveForm" class="form">
+                    <form id="leaveForm" class="premium-form">
                         <div class="form-group">
                             <label for="leaveType">Leave Type</label>
                             <select id="leaveType" required>
-                                <option value="">Select Leave Type</option>
-                                <option value="sick">Sick Leave</option>
+                                <option value="">Select leave type...</option>
                                 <option value="vacation">Vacation</option>
+                                <option value="sick">Sick Leave</option>
                                 <option value="personal">Personal Leave</option>
                                 <option value="emergency">Emergency Leave</option>
+                                <option value="maternity">Maternity/Paternity</option>
                             </select>
                         </div>
                         <div class="form-row">
@@ -196,151 +319,137 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="reason">Reason</label>
-                            <textarea id="reason" placeholder="Enter reason for leave" rows="4"></textarea>
+                            <label for="reason">Reason for Leave</label>
+                            <textarea id="reason" placeholder="Provide details..." rows="4"></textarea>
                         </div>
-                        <button type="submit" class="cta-button cta-primary">
+                        <button type="submit" class="btn btn-primary full-width">
                             <i class="fas fa-paper-plane"></i> Submit Request
                         </button>
                     </form>
                 </div>
-                <div class="leave-balance">
-                    <h3>Leave Balance</h3>
-                    <div class="balance-card">
-                        <div class="balance-item">
-                            <i class="fas fa-sun"></i>
-                            <div>
-                                <p>Vacation Days</p>
+
+                <div class="leave-balance-section">
+                    <h3>Your Leave Balance</h3>
+                    <div class="balance-cards">
+                        <div class="balance-card bc-1">
+                            <div class="balance-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <div class="balance-info">
+                                <p class="balance-label">Vacation Days</p>
                                 <span class="balance-number">15</span>
+                                <p class="balance-used">Used: 5 days</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="balance-card">
-                        <div class="balance-item">
-                            <i class="fas fa-heartbeat"></i>
-                            <div>
-                                <p>Sick Leave</p>
+                        <div class="balance-card bc-2">
+                            <div class="balance-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="balance-info">
+                                <p class="balance-label">Sick Leave</p>
                                 <span class="balance-number">8</span>
+                                <p class="balance-used">Used: 2 days</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="balance-card">
-                        <div class="balance-item">
-                            <i class="fas fa-calendar"></i>
-                            <div>
-                                <p>Personal Days</p>
+                        <div class="balance-card bc-3">
+                            <div class="balance-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="balance-info">
+                                <p class="balance-label">Personal Days</p>
                                 <span class="balance-number">5</span>
+                                <p class="balance-used">Used: 1 day</p>
                             </div>
                         </div>
                     </div>
-                    <div class="leave-table">
-                        <h4>Recent Requests</h4>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Type</th>
-                                    <th>Days</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>2026-06-10</td>
-                                    <td>Vacation</td>
-                                    <td>3</td>
-                                    <td><span class="status approved">Approved</span></td>
-                                </tr>
-                                <tr>
-                                    <td>2026-05-20</td>
-                                    <td>Sick Leave</td>
-                                    <td>1</td>
-                                    <td><span class="status approved">Approved</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                    <div class="leave-history">
+                        <h4>Recent Leave Requests</h4>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker approved"></div>
+                                <div class="timeline-content">
+                                    <p class="timeline-title">Vacation Leave</p>
+                                    <p class="timeline-date">June 10-14, 2026</p>
+                                    <span class="status-badge approved">Approved</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker pending"></div>
+                                <div class="timeline-content">
+                                    <p class="timeline-title">Sick Leave</p>
+                                    <p class="timeline-date">June 5, 2026</p>
+                                    <span class="status-badge pending">Pending</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Dashboard Section -->
-    <section id="dashboard" class="section dashboard-section">
-        <div class="container">
+    <!-- Analytics Dashboard Section -->
+    <section id="analytics" class="analytics-section">
+        <div class="section-container">
             <div class="section-header">
-                <h2>HR Dashboard</h2>
-                <p>Real-time insights and key performance indicators</p>
+                <h2>Analytics Dashboard</h2>
+                <p>Real-time HR metrics and insights</p>
+                <div class="header-underline"></div>
             </div>
             <div class="dashboard-grid">
-                <div class="dashboard-card">
-                    <div class="card-icon">
+                <div class="kpi-card kpi-1">
+                    <div class="kpi-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <div class="card-content">
-                        <h3>Total Employees</h3>
-                        <p class="card-number">245</p>
-                        <span class="card-change">↑ 5% from last month</span>
+                    <div class="kpi-content">
+                        <h4>Total Employees</h4>
+                        <p class="kpi-number">245</p>
+                        <p class="kpi-change positive"><i class="fas fa-arrow-up"></i> 5% increase</p>
                     </div>
                 </div>
-                <div class="dashboard-card">
-                    <div class="card-icon">
+
+                <div class="kpi-card kpi-2">
+                    <div class="kpi-icon">
                         <i class="fas fa-user-check"></i>
                     </div>
-                    <div class="card-content">
-                        <h3>Present Today</h3>
-                        <p class="card-number">218</p>
-                        <span class="card-change">89% attendance</span>
+                    <div class="kpi-content">
+                        <h4>Present Today</h4>
+                        <p class="kpi-number">218</p>
+                        <p class="kpi-change positive"><i class="fas fa-arrow-up"></i> 89% attendance</p>
                     </div>
                 </div>
-                <div class="dashboard-card">
-                    <div class="card-icon">
-                        <i class="fas fa-calendar-check"></i>
+
+                <div class="kpi-card kpi-3">
+                    <div class="kpi-icon">
+                        <i class="fas fa-calendar-times"></i>
                     </div>
-                    <div class="card-content">
-                        <h3>On Leave</h3>
-                        <p class="card-number">12</p>
-                        <span class="card-change">5% of workforce</span>
-                    </div>
-                </div>
-                <div class="dashboard-card">
-                    <div class="card-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Pending Requests</h3>
-                        <p class="card-number">7</p>
-                        <span class="card-change">Requires approval</span>
+                    <div class="kpi-content">
+                        <h4>On Leave</h4>
+                        <p class="kpi-number">12</p>
+                        <p class="kpi-change neutral"><i class="fas fa-dash"></i> 5% of workforce</p>
                     </div>
                 </div>
-                <div class="dashboard-card">
-                    <div class="card-icon">
-                        <i class="fas fa-briefcase"></i>
+
+                <div class="kpi-card kpi-4">
+                    <div class="kpi-icon">
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <div class="card-content">
-                        <h3>Active Projects</h3>
-                        <p class="card-number">18</p>
-                        <span class="card-change">On track</span>
-                    </div>
-                </div>
-                <div class="dashboard-card">
-                    <div class="card-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Performance Rating</h3>
-                        <p class="card-number">4.5/5</p>
-                        <span class="card-change">↑ 0.3 points</span>
+                    <div class="kpi-content">
+                        <h4>Pending Tasks</h4>
+                        <p class="kpi-number">7</p>
+                        <p class="kpi-change negative"><i class="fas fa-arrow-down"></i> Requires action</p>
                     </div>
                 </div>
             </div>
-            <div class="dashboard-charts">
-                <div class="chart-container">
-                    <h3>Department Distribution</h3>
+
+            <div class="charts-section">
+                <div class="chart-card">
+                    <h4>Department Distribution</h4>
                     <canvas id="departmentChart"></canvas>
                 </div>
-                <div class="chart-container">
-                    <h3>Leave Trends</h3>
+                <div class="chart-card">
+                    <h4>Leave Trends (Last 6 Months)</h4>
                     <canvas id="leaveChart"></canvas>
                 </div>
             </div>
@@ -348,31 +457,39 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
+    <section id="contact" class="contact-section">
+        <div class="section-container">
             <div class="section-header">
                 <h2>Get In Touch</h2>
-                <p>Have questions? We're here to help</p>
+                <p>Have questions? Our team is here to help</p>
+                <div class="header-underline"></div>
             </div>
-            <div class="contact-content">
+            <div class="contact-wrapper">
                 <div class="contact-info">
-                    <div class="info-box">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Address</h3>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4>Visit Us</h4>
                         <p>Amsterdam Airport Schiphol<br>2134 AA Hoofddorp, Netherlands</p>
                     </div>
-                    <div class="info-box">
-                        <i class="fas fa-phone"></i>
-                        <h3>Phone</h3>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h4>Call Us</h4>
                         <p>+31 (0)20-747 7747<br>Monday - Friday 9AM-5PM</p>
                     </div>
-                    <div class="info-box">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email Us</h4>
                         <p>hr@klm.com<br>support@klm-hr.com</p>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
+
+                <form class="contact-form premium-form" id="contactForm">
                     <div class="form-group">
                         <input type="text" placeholder="Your Name" required>
                     </div>
@@ -385,7 +502,7 @@
                     <div class="form-group">
                         <textarea placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="cta-button cta-primary">
+                    <button type="submit" class="btn btn-primary full-width">
                         <i class="fas fa-send"></i> Send Message
                     </button>
                 </form>
@@ -396,62 +513,89 @@
     <!-- Login Modal -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2>Employee Login</h2>
-            <form id="loginForm" class="form">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h2>Employee Portal</h2>
+                <p>Secure Login</p>
+            </div>
+            <form id="loginForm" class="premium-form">
                 <div class="form-group">
-                    <input type="email" placeholder="Email Address" required>
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Enter your email" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="Password" required>
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password" required>
                 </div>
                 <div class="form-check">
                     <input type="checkbox" id="rememberMe">
                     <label for="rememberMe">Remember me</label>
                 </div>
-                <button type="submit" class="cta-button cta-primary">
+                <button type="submit" class="btn btn-primary full-width">
                     <i class="fas fa-sign-in-alt"></i> Login
                 </button>
-                <p class="form-link">Don't have an account? <a href="#">Register here</a></p>
+                <p class="form-link">Don't have an account? <a href="#">Sign up here</a></p>
             </form>
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>KLM HR Application</h4>
-                    <p>Modern HR management for the modern workplace</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#dashboard">Dashboard</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>KLM HR Application</h4>
+                <p>Enterprise-grade HR management for modern organizations</p>
+                <div class="social-links">
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 KLM HR Application. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">API Docs</a></li>
+                </ul>
             </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Compliance</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 KLM HR Application. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-    <script src="script.js"></script>
+    <script src="utils.js"></script>
+    <script src="charts.js"></script>
+    <script src="forms.js"></script>
+    <script src="navigation.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
